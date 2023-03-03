@@ -4,8 +4,8 @@
 			"path": "../../../project"
 		},
 		{
-			"name": "example-project",
-			"path": "../../../project/example-project"
+			"name": "ImageLoader",
+			"path": "../../../project/ImageLoader"
 		}
 	],
 	"settings": {}

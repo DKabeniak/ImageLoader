@@ -3,14 +3,15 @@ package service
 import (
 	"context"
 	"fmt"
-	"github.com/GitH3ll/example-project/internal/config"
-	"github.com/GitH3ll/example-project/internal/constants"
-	"github.com/gofrs/uuid"
-	"github.com/golang-jwt/jwt/v5"
 	"strconv"
 	"time"
 
-	"github.com/GitH3ll/example-project/internal/model"
+	"github.com/DKabeniak/ImageLoader/internal/config"
+	"github.com/DKabeniak/ImageLoader/internal/constants"
+	"github.com/gofrs/uuid"
+	"github.com/golang-jwt/jwt/v5"
+
+	"github.com/DKabeniak/ImageLoader/internal/model"
 )
 
 type repository interface {

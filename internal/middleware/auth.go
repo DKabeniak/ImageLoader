@@ -2,12 +2,13 @@ package middleware
 
 import (
 	"context"
-	"github.com/GitH3ll/example-project/internal/constants"
-	"github.com/GitH3ll/example-project/internal/response"
-	"github.com/golang-jwt/jwt/v5"
-	"github.com/sirupsen/logrus"
 	"net/http"
 	"strconv"
+
+	"github.com/DKabeniak/ImageLoader/internal/constants"
+	"github.com/DKabeniak/ImageLoader/internal/response"
+	"github.com/golang-jwt/jwt/v5"
+	"github.com/sirupsen/logrus"
 )
 
 func Auth(keyword string, l *logrus.Logger) func(next http.Handler) http.Handler {

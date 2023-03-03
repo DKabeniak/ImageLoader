@@ -3,8 +3,9 @@ package repository
 import (
 	"context"
 	"fmt"
-	"github.com/GitH3ll/example-project/internal/config"
-	"github.com/GitH3ll/example-project/internal/model"
+
+	"github.com/DKabeniak/ImageLoader/internal/config"
+	"github.com/DKabeniak/ImageLoader/internal/model"
 	"github.com/jmoiron/sqlx"
 )
 

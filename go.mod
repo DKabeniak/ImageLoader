@@ -1,4 +1,4 @@
-module github.com/GitH3ll/example-project
+module github.com/DKabeniak/ImageLoader
 
 go 1.20
 

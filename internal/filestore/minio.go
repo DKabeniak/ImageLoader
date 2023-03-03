@@ -2,9 +2,10 @@ package filestore
 
 import (
 	"context"
-	"github.com/GitH3ll/example-project/internal/model"
-	"github.com/minio/minio-go/v7"
 	"time"
+
+	"github.com/DKabeniak/ImageLoader/internal/model"
+	"github.com/minio/minio-go/v7"
 )
 
 type Minio struct {

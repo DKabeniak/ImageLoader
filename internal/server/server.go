@@ -4,16 +4,17 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"github.com/GitH3ll/example-project/internal/config"
-	"github.com/GitH3ll/example-project/internal/constants"
-	"github.com/GitH3ll/example-project/internal/middleware"
-	"github.com/GitH3ll/example-project/internal/model"
-	"github.com/GitH3ll/example-project/internal/response"
-	"github.com/go-chi/chi"
-	"github.com/sirupsen/logrus"
 	"io"
 	"net/http"
 	"strconv"
+
+	"github.com/DKabeniak/ImageLoader/internal/config"
+	"github.com/DKabeniak/ImageLoader/internal/constants"
+	"github.com/DKabeniak/ImageLoader/internal/middleware"
+	"github.com/DKabeniak/ImageLoader/internal/model"
+	"github.com/DKabeniak/ImageLoader/internal/response"
+	"github.com/go-chi/chi"
+	"github.com/sirupsen/logrus"
 )
 
 type User struct {

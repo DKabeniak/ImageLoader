@@ -4,8 +4,9 @@ import (
 	"context"
 	"database/sql"
 	"fmt"
-	"github.com/GitH3ll/example-project/internal/config"
-	"github.com/GitH3ll/example-project/internal/model"
+
+	"github.com/DKabeniak/ImageLoader/internal/config"
+	"github.com/DKabeniak/ImageLoader/internal/model"
 	"github.com/golang-migrate/migrate/v4"
 	"github.com/golang-migrate/migrate/v4/database/postgres"
 	_ "github.com/golang-migrate/migrate/v4/source/file"
