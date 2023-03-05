@@ -4,6 +4,8 @@ import (
 	"context"
 	"time"
 
+	"io"
+
 	"github.com/DKabeniak/ImageLoader/internal/model"
 	"github.com/minio/minio-go/v7"
 )
@@ -39,4 +41,19 @@ func (m *Minio) GetUrls(ctx context.Context, images []model.Image) ([]string, er
 	}
 
 	return urls, nil
+}
+
+func (m *Minio) GetObjects(ctx context.Context, images []model.Image) ([]io.Reader, error) {
+	var objects []io.Reader
+
+	for i := range images {
+		object, err := m.minio.GetObject(ctx, m.bucket, images[i].Name, minio.GetObjectOptions{})
+		if err != nil {
+			return nil, err
+		}
+
+		objects = append(objects, object)
+	}
+
+	return objects, nil
 }

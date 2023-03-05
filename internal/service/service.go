@@ -3,6 +3,7 @@ package service
 import (
 	"context"
 	"fmt"
+	"io"
 	"strconv"
 	"time"
 
@@ -20,6 +21,8 @@ type repository interface {
 	UpdateUser(ctx context.Context, modelUser model.User) error
 	DeleteUser(ctx context.Context, id int64) error
 	CheckAuth(ctx context.Context, login, password string) (model.User, error)
+	CheckTgAuth(ctx context.Context, tgID int64) (int, error)
+	AuthorizeTG(ctx context.Context, userID int, telegramID int64) error
 }
 
 type imageRepository interface {
@@ -30,6 +33,7 @@ type imageRepository interface {
 type fileStorage interface {
 	PutObject(ctx context.Context, image model.Image) error
 	GetUrls(ctx context.Context, images []model.Image) ([]string, error)
+	GetObjects(ctx context.Context, images []model.Image) ([]io.Reader, error)
 }
 
 type Controller struct {
@@ -133,4 +137,42 @@ func (c *Controller) AddFile(ctx context.Context, image model.Image) error {
 	}
 
 	return err
+}
+
+func (c *Controller) AuthorizeTG(ctx context.Context, tgID int64, login, password string) error {
+	user, err := c.repo.CheckAuth(ctx, login, password)
+	if err != nil {
+		return err
+	}
+
+	_, err = c.repo.CheckTgAuth(ctx, tgID)
+	if err == nil {
+		return err
+	}
+
+	err = c.repo.AuthorizeTG(ctx, user.ID, tgID)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (c *Controller) GetImageObjects(ctx context.Context, tgID int64) ([]io.Reader, error) {
+	userID, err := c.repo.CheckTgAuth(ctx, tgID)
+	if err != nil {
+		return nil, err
+	}
+
+	images, err := c.imageRepo.GetImages(ctx, userID)
+	if err != nil {
+		return nil, err
+	}
+
+	objects, err := c.minio.GetObjects(ctx, images)
+	if err != nil {
+		return nil, err
+	}
+
+	return objects, nil
 }
