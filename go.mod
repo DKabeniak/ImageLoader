@@ -13,9 +13,11 @@ require (
 	github.com/lib/pq v1.10.7
 	github.com/minio/minio-go/v7 v7.0.49
 	github.com/sirupsen/logrus v1.9.0
+	github.com/swaggo/swag v1.8.10
 )
 
 require (
+
 	github.com/dustin/go-humanize v1.0.1 // indirect
 	github.com/google/uuid v1.3.0 // indirect
 	github.com/hashicorp/errwrap v1.1.0 // indirect

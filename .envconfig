@@ -2,7 +2,7 @@ export EXAMPLE_DB_DRIVER="postgres"
 export EXAMPLE_DB_USER="postgres"
 export EXAMPLE_DB_PASSWORD="secretpassword"
 export EXAMPLE_DB_NAME="postgres"
-export EXAMPLE_DB_SSLMODE="disabl"
+export EXAMPLE_DB_SSLMODE="disable"
 
 export EXAMPLE_JWT_KEYWORD="mysecretkeyword"
 
