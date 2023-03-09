@@ -1,14 +1,14 @@
-EXAMPLE_DB_DRIVER=postgres
-EXAMPLE_DB_USER=postgres
-EXAMPLE_DB_PASSWORD=secretpassword
-EXAMPLE_DB_NAME=postgres
-EXAMPLE_DB_SSLMODE=disable
+export EXAMPLE_DB_DRIVER="postgres"
+export EXAMPLE_DB_USER="postgres"
+export EXAMPLE_DB_PASSWORD="secretpassword"
+export EXAMPLE_DB_NAME="postgres"
+export EXAMPLE_DB_SSLMODE="disabl"
 
-EXAMPLE_JWT_KEYWORD=mysecretkeyword
+export EXAMPLE_JWT_KEYWORD="mysecretkeyword"
 
-EXAMPLE_MINIO_KEY_ID=miniouser
-EXAMPLE_MINIO_SECRET_KEY=secretpassword
-EXAMPLE_MINIO_ENDPOINT=localhost:9000
-EXAMPLE_MINIO_BUCKET=user-images
+export EXAMPLE_MINIO_KEY_ID="miniouser1"
+export EXAMPLE_MINIO_SECRET_KEY="secretpassword1"
+export EXAMPLE_MINIO_ENDPOINT="localhost:9000"
+export EXAMPLE_MINIO_BUCKET="new"
 
-EXAMPLE_TGBOT_API_KEY=6299256145:AAHX3f3etu8Evu_RnWGpYmSeapCUWlzCA4s
+export EXAMPLE_TGBOT_API_KEY="6299256145:AAHX3f3etu8Evu_RnWGpYmSeapCUWlzCA4s"
