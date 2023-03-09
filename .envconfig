@@ -6,9 +6,9 @@ export EXAMPLE_DB_SSLMODE="disabl"
 
 export EXAMPLE_JWT_KEYWORD="mysecretkeyword"
 
-export EXAMPLE_MINIO_KEY_ID="miniouser1"
-export EXAMPLE_MINIO_SECRET_KEY="secretpassword1"
+export EXAMPLE_MINIO_KEY_ID="miniouser"
+export EXAMPLE_MINIO_SECRET_KEY="secretpassword"
 export EXAMPLE_MINIO_ENDPOINT="localhost:9000"
-export EXAMPLE_MINIO_BUCKET="new"
+export EXAMPLE_MINIO_BUCKET="image-loader"
 
 export EXAMPLE_TGBOT_API_KEY="6299256145:AAHX3f3etu8Evu_RnWGpYmSeapCUWlzCA4s"

@@ -176,3 +176,11 @@ func (c *Controller) GetImageObjects(ctx context.Context, tgID int64) ([]io.Read
 
 	return objects, nil
 }
+
+func ForABenchmark() {
+	var nums []int
+
+	for i := 0; i < 1000000; i++ {
+		nums = append(nums, i)
+	}
+}

@@ -1,8 +1,9 @@
 package middleware
 
 import (
-	"github.com/sirupsen/logrus"
 	"net/http"
+
+	"github.com/sirupsen/logrus"
 )
 
 func Logger(l *logrus.Logger) func(next http.Handler) http.Handler {
